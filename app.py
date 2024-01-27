@@ -35,7 +35,8 @@ def text_to_speech(text,lang_code):
     try:
         speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
         speech_config.speech_synthesis_language=lang_code
-        speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config)
+        audio_config = speechsdk.audio.AudioConfig(use_default_microphone=True)
+        speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config,audio_config=audio_config)
         with st.spinner("Speaking 🗣️..."):
             result = speech_synthesizer.speak_text_async(text).get()
             if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
@@ -53,8 +54,9 @@ def transcribe_real_time_audio(lang_code):
     st.info("Speak into your microphone 🗣️...", icon="💡")
     try:
         speech_config.speech_recognition_language=lang_code
-        speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config)
-        
+        audio_config = speechsdk.audio.AudioConfig(use_default_microphone=True)
+        speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config,audio_config=audio_config)
+    
         with st.spinner("Listening🧏🏻..."):
             result = speech_recognizer.recognize_once_async().get()
             if result.reason == speechsdk.ResultReason.RecognizedSpeech:
