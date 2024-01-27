@@ -1,5 +1,8 @@
 # Azure Speech Services with Streamlit 🗣️📝
 
+<p align="center">
+   <img src="https://github.com/Sgvkamalakar/Azure_AI_Speech_Services/assets/103712713/b9de4289-e86a-42a5-86df-c7fed3aa0c5a"/ height="400" width="400">
+</p>   
 Welcome to the Azure Speech Services with Streamlit repository! This project provides a user-friendly interface for interacting with Azure Speech Services, offering Speech-to-Text (STT) and Text-to-Speech (TTS) functionalities. The integration with Streamlit makes it easy for users to transcribe real-time audio or generate speech from entered text using Azure's powerful AI capabilities.
 
 ## Features
