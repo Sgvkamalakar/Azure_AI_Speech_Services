@@ -2,7 +2,6 @@ import streamlit as st
 import azure.cognitiveservices.speech as speechsdk
 from dotenv import load_dotenv
 import os
-
 load_dotenv()
 speech_key = os.getenv('SPEECH_KEY')
 service_region = os.getenv('SERVICE_REGION')
@@ -105,7 +104,7 @@ a:hover, a:active {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #0e1117;
+    background-color:black;
     color: white;
     text-align: center;
     padding: 10px;  /* Added padding for better appearance */
