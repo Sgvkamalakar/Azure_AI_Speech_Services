@@ -1,3 +1,4 @@
 streamlit
 azure-cognitiveservices-speech
 python-dotenv
+streamlit_webrtc
