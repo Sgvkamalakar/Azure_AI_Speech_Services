@@ -37,7 +37,7 @@ def text_to_speech(text,lang_code):
         speech_config.speech_synthesis_language=lang_code
         audio_output_config = speechsdk.audio.AudioOutputConfig(use_default_speaker=True)
         audio_config = speechsdk.audio.AudioConfig(use_default_microphone=True)
-        speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config,audio_config=audio_config,audio_output_config)
+        speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config,audio_config=audio_config,audio_output_config=audio_output_config)
         with st.spinner("Speaking 🗣️..."):
             result = speech_synthesizer.speak_text_async(text).get()
             if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
